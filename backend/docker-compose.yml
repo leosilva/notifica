@@ -1,0 +1,42 @@
+services:
+  db:
+    image: mysql/mysql-server:latest
+
+    # healthcheck:
+    #   test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
+    #   interval: 5s
+    #   timeout: 3s
+    #   retries: 20
+    #   start_period: 10s
+    restart: always
+    environment:
+      MYSQL_DATABASE: "notifica"
+      MYSQL_ROOT_PASSWORD: "18102007"
+    ports:
+      - '3306:3306'
+    volumes:
+      - /var/lib/mysql
+      
+  django:
+    build: ./
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - '8000:8000'
+
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+      
+      # Super usuário provisório
+      - MATRICULA=${MATRICULA}
+      - SENHA=${SENHA}
+
+    command: sh -c "python3 manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
