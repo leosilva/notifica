@@ -1,0 +1,1 @@
+export {Carrosselcard} from './carrosselcard'

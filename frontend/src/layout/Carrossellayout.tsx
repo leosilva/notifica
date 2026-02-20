@@ -1,7 +1,7 @@
+import {Carrosselcard} from '../components'
+
 export function Carrossellayout() {
     return (
-        <div>
-            <p>teste</p>
-        </div>
+        <Carrosselcard />
     )
 }
