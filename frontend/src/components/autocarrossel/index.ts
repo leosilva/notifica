@@ -1,0 +1,1 @@
+export { default as AutoCarrossel } from './autocarrossel.view'

@@ -2,5 +2,6 @@
     width: 70vw;
     height: 70vh;
     border-radius: 20px;
-    background-color: blue;
+    display: flex;
+    justify-content: center;
 }
