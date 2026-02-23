@@ -1,0 +1,1 @@
+export { default as CarrosselData } from './carrosseldata.view'

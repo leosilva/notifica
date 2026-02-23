@@ -1,1 +1,1 @@
-export {default as Carrosselcard} from './carrosselcard.view'
+export {default as CarrosselCard} from './carrosselcard.view'

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router'
 export { Routes, Route } from 'react-router-dom'
-import { Carrossellayout } from '../layout/Carrossellayout'
+import { Carrossellayout } from '../pages/carrosselpage'
 
 export function AppRoutes() {
     return (
