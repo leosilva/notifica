@@ -3,7 +3,6 @@ import styles from './carrosselcard.module.css'
 interface CarrosselcardProps {
     titulo: string;
     sumario: string;
-    link: string | null;
     imagem: string | null;
 }
 

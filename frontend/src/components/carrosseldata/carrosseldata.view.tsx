@@ -5,7 +5,6 @@ interface MyInfoProps {
     id: number;
     titulo: string;
     sumario: string;
-    link: string | null;
     imagem: string | null;
 }
 
@@ -19,7 +18,6 @@ export default function CarrosselData({ info = [] }: ArrayProps) {
         <CarrosselCard  
             titulo={item.titulo} 
             sumario={item.sumario}
-            link={item.link}
             imagem={item.imagem}
         />));
     return (
